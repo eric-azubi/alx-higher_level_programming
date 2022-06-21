@@ -75,4 +75,34 @@ class Square:
             return True
 
     def area(self):
+        """
+        Returns area of the square instance
+        """
+        return (self.size ** 2)
 
+    def my_print(self):
+        """
+        prints to the stdout square with # or empty line if 0
+        """
+        if self.size == 0:
+            print()
+            return
+        for a in range(self.position[1]):
+            print()
+        for a in range(self.size):
+            print("{}{}".format("0" * self.position[0], "#" * self.size))
+
+    def __str__(self):
+        if self.size == 0:
+            return ("")
+        _sq_str = ""
+        for x in range(self.position[1]):
+            _sq_str += "\n"
+        for i in range(self.size):
+            for y in range(self.position[0]):
+                _sq_str += " "
+            for a in range(self.size):
+                _sq_str += "#"
+            if i < self.size - 1:
+                _sq_str += "\n"
+        return (_sq_str)
